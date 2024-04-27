@@ -1,0 +1,14 @@
+pandas
+numpy
+matplotlib
+seaborn
+ipykernel
+dvc
+mlflow
+scikit-learn
+Dockerfile
+pyymal
+pymongo
+python-dotenv
+box
+-e .
