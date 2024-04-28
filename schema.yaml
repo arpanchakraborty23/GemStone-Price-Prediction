@@ -1,1 +1,2 @@
-val: key
+TARGET_COLUMN:
+  name: price

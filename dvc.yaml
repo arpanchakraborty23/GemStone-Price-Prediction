@@ -8,3 +8,28 @@ stages:
       - artifacts/data_ingestion/train.csv
       - artifacts/data_ingestion/test.csv
       - artifacts/data_ingestion/raw.csv  
+
+  data_transformation:
+    cmd: python src\pipline\data_transformation_pipline.py
+    deps: 
+      - src\pipline\data_transformation_pipline.py
+      - config/config.yaml
+      - artifacts/data_ingestion/train.csv
+      - artifacts/data_ingestion/test.csv
+      - artifacts/data_ingestion/raw.csv
+
+    outs:
+     - artifacts/data_transformation/train_arr.npy
+     - artifacts/data_transformation/test_arr.npy
+     - artifacts/data_transformation/preprocesser.pkl
+    
+
+  model_train:
+    cmd: python src\pipline\model_train_pipline.py
+    deps:
+     - src\pipline\model_train_pipline.py
+     - config/config.yaml
+     - artifacts/data_transformation/train_arr.npy
+     - artifacts/data_transformation/test_arr.npy
+    outs:
+     -  - artifacts/model_trainer/model.pkl  

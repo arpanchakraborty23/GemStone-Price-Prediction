@@ -1,6 +1,6 @@
 import os,sys
 from src.utils.utils import read_yaml,create_dir
-from src.entity.config_entity import DataIngestionConfig
+from src.entity.config_entity import DataIngestionConfig,DataTransformationConfig,ModelTrainerConfig
 from src.constant.ymal_path import *
 
 
@@ -32,3 +32,33 @@ class ConfigManager:
         )
 
         return data_ingestion_config
+    
+    def get_data_transformation_config(self):
+          config=self.config.data_transformation
+          schema=self.schema.TARGET_COLUMN
+
+          create_dir([config.dir])
+
+          data_transformation_config=DataTransformationConfig(
+                dir=config.dir,
+                train_data=config.train_data,
+                test_data=config.test_data,
+                preproecss_obj=config.preproecss_obj,
+                target_col=schema.name,
+                train_arr=config.train_arr,
+                test_arr=config.test_arr
+          )
+          return data_transformation_config
+    
+    def get_model_trainer_config(self):
+          config=self.config.model_trainer
+          create_dir([config.dir])
+
+          model_trainer_config=ModelTrainerConfig(
+                dir=config.dir,
+                model_file_path=config.model_file_path,
+                train_arr=config.train_arr,
+                test_arr=config.test_arr,
+                base_accuracy=config.base_accuracy
+          )
+          return model_trainer_config

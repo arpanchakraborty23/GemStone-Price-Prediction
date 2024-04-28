@@ -1,10 +1,12 @@
 import os,sys
 import yaml
+import pickle
 import pandas as pd
 from pathlib import Path
 from pymongo import MongoClient
 from box import ConfigBox
 from ensure import ensure_annotations
+from sklearn.metrics import mean_absolute_error,mean_squared_error,r2_score
 
 from src.logging.logger import logging
 from src.exception.exception import CustomException
@@ -43,3 +45,39 @@ def read_data_from_db(db,collection,url):
     df.drop('_id',axis=1,inplace=True)
     print(df.head())
     return df
+
+def save_obj(file_path:Path,obj):
+    with open(file_path,'wb') as f:
+        pickle.dump(obj,f)
+
+def model_evaluate(x_train, y_train, x_test, y_test, models):
+    try:
+        report = {}
+        logging.info('model evaluation started')
+        
+        for i in range(len(models)):
+            model = list(models.values())[i]
+            model.fit(x_train, y_train)
+            y_pred = model.predict(x_test)
+            accuracy = r2_score(y_test, y_pred)*100
+
+            logging.info(f'accuracy score for {list(models.keys())[i]}: {accuracy}')
+           
+            
+
+            # Calculate mean absolute error
+            mae = mean_absolute_error(y_test, y_pred)
+       
+
+            # Calculate mean squared error
+            mse = mean_squared_error(y_test, y_pred)
+          
+            report[list(models.keys())[i]] =[
+                f'Accuracy: {accuracy:.2f}%  MAE: {mae:.2f}%  MSE: {mse:.2f}%'   
+            ]
+
+        return report
+
+    except Exception as e:
+            logging.info(f'Error in utils {str(e)}')
+            raise CustomException(sys,e)            
