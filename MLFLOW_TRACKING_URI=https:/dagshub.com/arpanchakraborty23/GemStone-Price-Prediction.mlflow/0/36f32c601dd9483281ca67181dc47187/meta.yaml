@@ -1,0 +1,15 @@
+artifact_uri: /workspaces/GemStone-Price-Prediction/MLFLOW_TRACKING_URI=https:/dagshub.com/arpanchakraborty23/GemStone-Price-Prediction.mlflow/0/36f32c601dd9483281ca67181dc47187/artifacts
+end_time: 1714416095247
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 36f32c601dd9483281ca67181dc47187
+run_name: aged-grub-90
+run_uuid: 36f32c601dd9483281ca67181dc47187
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714416076988
+status: 3
+tags: []
+user_id: arpanchakraborty23 \
