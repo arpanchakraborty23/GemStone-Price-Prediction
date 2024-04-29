@@ -32,4 +32,15 @@ stages:
      - artifacts/data_transformation/train_arr.npy
      - artifacts/data_transformation/test_arr.npy
     outs:
-     -  - artifacts/model_trainer/model.pkl  
+     - artifacts/model_trainer/model.pkl  
+
+  model_eval:
+    cmd: python src\pipline\model_eval_pipline.py
+    deps:
+      - src\pipline\model_eval_pipline.py
+      - config/config.yaml
+      - artifacts/data_transformation/preprocesser.pkl
+      - artifacts/data_ingestion/test.csv
+
+    outs:
+      - artifacts/model_eval/metrics.js

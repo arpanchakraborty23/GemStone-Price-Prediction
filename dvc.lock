@@ -5,8 +5,8 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: 5df6a2abe7f18f316252b423d5a5fbe3
-      size: 224
+      md5: 1ef9c41ff09c753c596c4811c4c215e8
+      size: 1177
     - path: src/pipline/data_ingestion_pipline.py
       hash: md5
       md5: af4249fe2274e508d04dab7f12199b44
@@ -24,3 +24,63 @@ stages:
       hash: md5
       md5: 51d2255b231b706a554f60ff3065c7ec
       size: 8805734
+  data_transformation:
+    cmd: python src\pipline\data_transformation_pipline.py
+    deps:
+    - path: artifacts/data_ingestion/raw.csv
+      hash: md5
+      md5: abbd67096da74f521aac39e55eb04445
+      size: 11900280
+    - path: artifacts/data_ingestion/test.csv
+      hash: md5
+      md5: 97b3fdef537046681c11ee10a4d47a6a
+      size: 3094599
+    - path: artifacts/data_ingestion/train.csv
+      hash: md5
+      md5: 51d2255b231b706a554f60ff3065c7ec
+      size: 8805734
+    - path: config/config.yaml
+      hash: md5
+      md5: 1ef9c41ff09c753c596c4811c4c215e8
+      size: 1177
+    - path: src\pipline\data_transformation_pipline.py
+      hash: md5
+      md5: fad6bd44e956b092f7d6ef6104895db7
+      size: 1173
+    outs:
+    - path: artifacts/data_transformation/preprocesser.pkl
+      hash: md5
+      md5: 3468101be9c33dc8a686154e4d7fcbc1
+      size: 3007
+    - path: artifacts/data_transformation/test_arr.npy
+      hash: md5
+      md5: 9f73be3fb343b5648cb1a5e05310557a
+      size: 4026448
+    - path: artifacts/data_transformation/train_arr.npy
+      hash: md5
+      md5: cb633203ff29d1d3f33137418a572a49
+      size: 11459648
+  model_train:
+    cmd: python src\pipline\model_train_pipline.py
+    deps:
+    - path: artifacts/data_transformation/test_arr.npy
+      hash: md5
+      md5: 9f73be3fb343b5648cb1a5e05310557a
+      size: 4026448
+    - path: artifacts/data_transformation/train_arr.npy
+      hash: md5
+      md5: cb633203ff29d1d3f33137418a572a49
+      size: 11459648
+    - path: config/config.yaml
+      hash: md5
+      md5: 1ef9c41ff09c753c596c4811c4c215e8
+      size: 1177
+    - path: src\pipline\model_train_pipline.py
+      hash: md5
+      md5: ed3ab29dfc1309343ca26f0cc32c09e7
+      size: 1104
+    outs:
+    - path: artifacts/model_trainer/model.pkl
+      hash: md5
+      md5: a0b036b13f67c3447515ed30448a5bd6
+      size: 1227100236

@@ -1,1 +1,8 @@
-key : val
+
+    LinearRegression: LinearRegression()
+    Ridge: Ridge()
+    RandomForestRegressor: RandomForestRegressor()
+    DecisionTreeRegressor: DecisionTreeRegressor()
+    SVR: SVR()
+
+

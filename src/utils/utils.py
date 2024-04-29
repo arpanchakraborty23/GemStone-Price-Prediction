@@ -1,6 +1,7 @@
 import os,sys
 import yaml
 import pickle
+import json
 import pandas as pd
 from pathlib import Path
 from pymongo import MongoClient
@@ -50,6 +51,10 @@ def save_obj(file_path:Path,obj):
     with open(file_path,'wb') as f:
         pickle.dump(obj,f)
 
+def load_obj(file_path):
+    with open(file_path,'rb') as f:
+        return pickle.load(f)
+
 def model_evaluate(x_train, y_train, x_test, y_test, models):
     try:
         report = {}
@@ -81,3 +86,7 @@ def model_evaluate(x_train, y_train, x_test, y_test, models):
     except Exception as e:
             logging.info(f'Error in utils {str(e)}')
             raise CustomException(sys,e)            
+    
+def save_json(file_path,data:dict):
+    with open(file_path,'wb') as j:
+        json.dump(j,data)

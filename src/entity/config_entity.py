@@ -25,3 +25,11 @@ class ModelTrainConfig:
     train_arr:Path
     test_arr:Path
     model: Path
+
+@dataclass
+class ModelEvalConfig:
+    dir: Path
+    test_arr:Path
+    model: Path
+    metrics: Path
+    Target_col:str

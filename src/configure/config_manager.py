@@ -1,6 +1,6 @@
 import os,sys
 from src.utils.utils import read_yaml,create_dir
-from src.entity.config_entity import DataIngestionConfig,DataTransformationConfig,ModelTrainerConfig
+from src.entity.config_entity import DataIngestionConfig,DataTransformationConfig,ModelTrainConfig,ModelEvalConfig
 from src.constant.ymal_path import *
 
 
@@ -50,15 +50,30 @@ class ConfigManager:
           )
           return data_transformation_config
     
-    def get_model_trainer_config(self):
+    def get_model_train_config(self):
           config=self.config.model_trainer
+          
+         
+
           create_dir([config.dir])
 
-          model_trainer_config=ModelTrainerConfig(
+          model_train_config=ModelTrainConfig(
                 dir=config.dir,
-                model_file_path=config.model_file_path,
                 train_arr=config.train_arr,
                 test_arr=config.test_arr,
-                base_accuracy=config.base_accuracy
+                model=config.model
+                
           )
-          return model_trainer_config
+          return model_train_config
+    def get_model_eval_config(self):
+        config=self.config.model_eval
+        schema=self.schema.TARGET_COLUMN
+
+        model_eval_config=ModelEvalConfig(
+            dir=config.dir,
+            test_data=config.test_arr,
+            model=config.model,
+            metrics=config.metrics,
+            Target_col=schema.name
+        )
+        return model_eval_config

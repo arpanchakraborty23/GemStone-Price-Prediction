@@ -1,8 +1,8 @@
-from src.utils.utils import save_obj
+from src.utils.utils import save_obj,model_evaluate
 from src.logging.logger import logging
 from src.exception.exception import CustomException
 from src.entity.config_entity import ModelTrainConfig
-
+import os,sys
 import numpy as np
 from sklearn.linear_model import LinearRegression,Ridge
 from sklearn.tree import DecisionTreeRegressor
@@ -31,9 +31,7 @@ class ModelTrain:
                 'Ridge Regeassor' : Ridge(),
                 'RandomForest Regressor': RandomForestRegressor(),
                 'Ada Boost Regressor':AdaBoostRegressor(),
-                'KDTree Regressor': KDTree(),
-                'DecisionTree Regressor' : DecisionTreeRegressor(),
-                'Support Vector Regressor': SVR()
+                'DecisionTree Regressor' : DecisionTreeRegressor()
                 }
             model_report:dict=model_evaluate(x_train=x_train,y_train=y_train,x_test=x_test,y_test=y_test,models=models)   
             print( model_report)

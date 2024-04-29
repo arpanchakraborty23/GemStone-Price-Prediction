@@ -10,7 +10,7 @@ class DataTransformationPipline:
     def __init__(self) -> None:
         pass
 
-    def pipline():
+    def pipline(self):
         try:
             config=ConfigManager()
             data_tranformation_config=config.get_data_transformation_config()

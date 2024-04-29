@@ -1,21 +1,21 @@
+import os,sys
 from src.configure.config_manager import ConfigManager
 from src.logging.logger import logging
 from src.exception.exception import CustomException
-from src.components.model_train import ModelTrain
-import os,sys
+from src.components.model_eval import ModelEval,ModelEvalConfig
 
 STAGE_NAME = "Model Train stage"
 
-class ModelTrainPipline:
+class ModelEvalPipline:
     def __init__(self) -> None:
           pass
            
     def pipline(self):
         try:
             config=ConfigManager()
-            model_train_config=config.get_model_train_config()
-            model_train=ModelTrain(config=model_train_config)
-            model_train.initate_model_trainer()
+            model_eval_config=config.get_model_eval_config()
+            model_train=ModelEval(config=model_eval_config)
+            model_train.initiating_model_eval()
         except CustomException as e:
                     logging.info(f'Error cooured {str(e)}')
                     raise CustomException(sys,e)    
@@ -25,9 +25,9 @@ class ModelTrainPipline:
 if __name__ == '__main__':
     try:
         logging.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-        obj = ModelTrainPipline()
+        obj = ModelEvalPipline()
         obj.pipline()
         logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     except Exception as e:
         logging.exception(e)
-        raise e                         
+        raise e      
