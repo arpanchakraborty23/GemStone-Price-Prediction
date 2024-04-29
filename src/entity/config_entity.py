@@ -31,5 +31,6 @@ class ModelEvalConfig:
     dir: Path
     test_arr:Path
     model: Path
-    metrics: Path
-    Target_col:str
+    scores: Path
+
+   

@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1714415874552
+current_stage: None
+description: null
+last_updated_timestamp: 1714415874552
+name: regressor_model
+run_id: 5c4f2772e13040da919f741447a22fe5
+run_link: null
+source: /workspaces/GemStone-Price-Prediction/MLFLOW_TRACKING_URI=https:/dagshub.com/arpanchakraborty23/GemStone-Price-Prediction.mlflow/0/5c4f2772e13040da919f741447a22fe5/artifacts/model
+status: READY
+status_message: null
+storage_location: /workspaces/GemStone-Price-Prediction/MLFLOW_TRACKING_URI=https:/dagshub.com/arpanchakraborty23/GemStone-Price-Prediction.mlflow/0/5c4f2772e13040da919f741447a22fe5/artifacts/model
+user_id: null
+version: 1

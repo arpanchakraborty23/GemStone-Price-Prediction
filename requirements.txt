@@ -6,9 +6,8 @@ ipykernel
 dvc
 mlflow
 scikit-learn
-Dockerfile
-pyymal
+python-box
 pymongo
 python-dotenv
-box
+ensure
 -e .
