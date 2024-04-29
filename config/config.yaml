@@ -31,4 +31,5 @@ model_eval:
   dir: artfacts/model_eval
   test_arr: artifacts/data_transformation/test_arr.npy
   model: artifacts/model_trainer/model.pkl
- 
+  metrics: artifacts/model_eval/metrics.json
+  

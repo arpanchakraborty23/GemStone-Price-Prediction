@@ -3,6 +3,7 @@ import mlflow.sklearn
 import os,sys
 import numpy as np
 import pandas as pd
+from pathlib import Path
 from urllib.parse import urlparse
 from sklearn.metrics import r2_score,mean_absolute_error,mean_squared_error
 from dotenv import load_dotenv
@@ -29,6 +30,9 @@ class ModelEval:
         except Exception as e:
             logging.info('error occured',str(e))
             raise CustomException(sys,e)
+        
+
+   
 
     def initiating_model_eval(self):
         try:
@@ -43,31 +47,27 @@ class ModelEval:
             x_test=test_array[:,:-1]
             y_test=test_array[:,-1]
 
-            logging.info('np arr loaded')
+            mlflow_uri=os.getenv('MLFLOW_TRACKING_URI')
 
+            # mlflow.set_registry_uri('https://dagshub.com/arpanchakraborty23/GemStone-Price-Prediction.mlflow')
             mlflow.set_tracking_uri('MLFLOW_TRACKING_URI=https://dagshub.com/arpanchakraborty23/GemStone-Price-Prediction.mlflow')
-            
-            logging.info('mlflow uri set')
-            tracking_url_type_store=urlparse(mlflow.get_tracking_uri()).scheme
 
-           
+            track_uri_type_store=urlparse(mlflow.get_tracking_uri()).scheme
+
+            print(track_uri_type_store)
 
             with mlflow.start_run():
-                logging.info('mlflow run started')
                 predict=model.predict(x_test)
                 (MSE,MAE,RMSE,acuracy)=self.eval_metrics(y_actual=y_test,y_pred=predict)
 
                 scores={'Rmse':RMSE,'Mse':MSE,'Mae':MAE,'acuracy':acuracy}
 
-                # save_json(file_path=self.config.metrics,data=scores)
+             
 
-                mlflow.log_metric('Rmse',RMSE)
-                mlflow.log_metric('Mse',MSE)
-                mlflow.log_metric('Mae',MAE)
-                mlflow.log_metric('acuracy',acuracy)
+                mlflow.log_metrics({'Rmse':RMSE,'Mse':MSE,'Mae':MAE,'acuracy':acuracy})
 
                
-                if tracking_url_type_store !='file':
+                if track_uri_type_store !='file':
                     mlflow.sklearn.log_model(model,'model',registered_model_name='regressor_model')
 
                 else:

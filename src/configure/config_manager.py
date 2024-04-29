@@ -65,14 +65,16 @@ class ConfigManager:
                 
           )
           return model_train_config
+
     def get_model_eval_config(self):
         config=self.config.model_eval
-        schema=self.schema.TARGET_COLUMN
+     
+        create_dir([config.dir])
 
         model_eval_config=ModelEvalConfig(
             dir=config.dir,
             test_arr=config.test_arr,
             model=config.model
-            
+           
         )
         return model_eval_config
