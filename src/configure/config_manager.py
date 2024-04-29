@@ -71,9 +71,8 @@ class ConfigManager:
 
         model_eval_config=ModelEvalConfig(
             dir=config.dir,
-            test_data=config.test_arr,
-            model=config.model,
-            metrics=config.metrics,
-            Target_col=schema.name
+            test_arr=config.test_arr,
+            model=config.model
+            
         )
         return model_eval_config
