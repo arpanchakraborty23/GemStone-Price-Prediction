@@ -1,0 +1,15 @@
+artifact_uri: /workspaces/GemStone-Price-Prediction/MLFLOW_TRACKING_URI=https:/dagshub.com/arpanchakraborty23/GemStone-Price-Prediction.mlflow/0/712677e6956a4de3aaac2435c92e24c9/artifacts
+end_time: 1714418700598
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 712677e6956a4de3aaac2435c92e24c9
+run_name: illustrious-crab-821
+run_uuid: 712677e6956a4de3aaac2435c92e24c9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714418669040
+status: 3
+tags: []
+user_id: codespace
