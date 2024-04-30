@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/7865bf4565d74eb69d91c628b8773fcb/artifacts
+end_time: 1714503205967
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7865bf4565d74eb69d91c628b8773fcb
+run_name: redolent-turtle-280
+run_uuid: 7865bf4565d74eb69d91c628b8773fcb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714503200635
+status: 4
+tags: []
+user_id: ac

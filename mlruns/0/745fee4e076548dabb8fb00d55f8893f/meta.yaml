@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/745fee4e076548dabb8fb00d55f8893f/artifacts
+end_time: 1714500221684
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 745fee4e076548dabb8fb00d55f8893f
+run_name: unruly-grub-10
+run_uuid: 745fee4e076548dabb8fb00d55f8893f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714500216278
+status: 4
+tags: []
+user_id: ac

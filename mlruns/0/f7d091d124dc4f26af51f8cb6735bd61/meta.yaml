@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/f7d091d124dc4f26af51f8cb6735bd61/artifacts
+end_time: 1714499901601
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f7d091d124dc4f26af51f8cb6735bd61
+run_name: painted-owl-696
+run_uuid: f7d091d124dc4f26af51f8cb6735bd61
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714499879613
+status: 4
+tags: []
+user_id: ac

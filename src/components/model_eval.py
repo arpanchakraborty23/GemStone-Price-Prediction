@@ -51,28 +51,28 @@ class ModelEval:
 
             mlflow.set_registry_uri(mlflow_uri)
             
-            track_uri_type_store=urlparse(mlflow.get_tracking_uri()).scheme
-
+            track_uri_type_store = urlparse(mlflow.get_tracking_uri()).scheme
             print(track_uri_type_store)
 
             with mlflow.start_run():
                 predict=model.predict(x_test)
+                
                 (MSE,MAE,RMSE,acuracy)=self.eval_metrics(y_actual=y_test,y_pred=predict)
 
                 scores={'Rmse':RMSE,'Mse':MSE,'Mae':MAE,'acuracy':acuracy}
 
-                save_json(file_path=self.config.metrics,data=scores)
+                mlflow.log_artifacts(self.config.metrics,scores)
 
-                mlflow.log_metrics({'Rmse':RMSE,'Mse':MSE,'Mae':MAE,'acuracy':acuracy})
+                mlflow.log_metrics(scores)
 
                
-                if track_uri_type_store !='file':
-                    mlflow.sklearn.log_model(model,'model',registered_model_name='regressor_model')
-
+                if track_uri_type_store != 'file':
+                    mlflow.sklearn.log_model(model, 'model', registered_model_name='regressor_model')
                 else:
-                    mlflow.sklearn.log_model(model,'model')   
-                    logging.info('completed model eval')
+                    mlflow.sklearn.log_model(model, 'model')   
+                    logging.info('Completed model evaluation')
 
+                save_json(file_path=self.config.metrics,data=scores)
         except Exception as e:
             logging.info(f' Error occured {str(e)}')
             raise CustomException(sys,e) 

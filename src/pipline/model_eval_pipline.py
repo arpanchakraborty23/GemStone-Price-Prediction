@@ -4,7 +4,7 @@ from src.logging.logger import logging
 from src.exception.exception import CustomException
 from src.components.model_eval import ModelEval,ModelEvalConfig
 
-STAGE_NAME = "Model Train stage"
+STAGE_NAME = "Model eval stage"
 
 class ModelEvalPipline:
     def __init__(self) -> None:
