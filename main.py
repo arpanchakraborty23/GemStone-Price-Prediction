@@ -15,8 +15,7 @@ if __name__ == '__main__':
         obj.pipline()
         logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     except Exception as e:
-        logging.exception(e)
-        raise e   
+        logging.info('error occured ',str(e)) 
 
 STAGE_NAME = "Data Transformation stage"   
 if __name__ == '__main__':
@@ -26,9 +25,8 @@ if __name__ == '__main__':
         obj.pipline()
         logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     except Exception as e:
-        logging.exception(e)
-        raise e    
-    
+        logging.info('error occured ',str(e))  
+        raise CustomException(sys,e)
 STAGE_NAME = "Model Train stage"
 if __name__ == '__main__':
     try:
@@ -39,15 +37,3 @@ if __name__ == '__main__':
     except Exception as e:
         logging.exception(e)
         raise e           
-
-STAGE_NAME = "Model Train stage"
-
-if __name__ == '__main__':
-    try:
-        logging.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-        obj = ModelEvalPipline()
-        obj.pipline()
-        logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
-    except Exception as e:
-        logging.exception('error occured',str(e))
-        raise CustomException(sys,e) 

@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/GemStone-Price-Prediction/mlruns/0/9322ed446b7d425592ce7eb7c88ab607/artifacts
+end_time: 1714493219676
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9322ed446b7d425592ce7eb7c88ab607
+run_name: trusting-stoat-432
+run_uuid: 9322ed446b7d425592ce7eb7c88ab607
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714493198305
+status: 3
+tags: []
+user_id: codespace

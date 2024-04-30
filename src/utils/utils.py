@@ -87,6 +87,8 @@ def model_evaluate(x_train, y_train, x_test, y_test, models):
             logging.info(f'Error in utils {str(e)}')
             raise CustomException(sys,e)            
     
-def save_json(file_path:Path,data:dict):
+
+def save_json(file_path,data:dict):
+
     with open(file_path,'w') as j:
         json.dump(data,j,indent=4)

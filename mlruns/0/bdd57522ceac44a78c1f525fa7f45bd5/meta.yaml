@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/GemStone-Price-Prediction/mlruns/0/bdd57522ceac44a78c1f525fa7f45bd5/artifacts
+end_time: 1714493978808
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bdd57522ceac44a78c1f525fa7f45bd5
+run_name: languid-flea-434
+run_uuid: bdd57522ceac44a78c1f525fa7f45bd5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714493954685
+status: 3
+tags: []
+user_id: codespace

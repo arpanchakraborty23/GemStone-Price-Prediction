@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/GemStone-Price-Prediction/mlruns/0/7418ea0f2a434d7aaeae9164bdd0eeb0/artifacts
+end_time: 1714493396755
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7418ea0f2a434d7aaeae9164bdd0eeb0
+run_name: thoughtful-deer-91
+run_uuid: 7418ea0f2a434d7aaeae9164bdd0eeb0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714493377225
+status: 3
+tags: []
+user_id: codespace

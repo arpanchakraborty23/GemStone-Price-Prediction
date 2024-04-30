@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/GemStone-Price-Prediction/mlruns/0/9dfc208a5e4a449d98faeea7d0f32f74/artifacts
+end_time: 1714496614101
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9dfc208a5e4a449d98faeea7d0f32f74
+run_name: delicate-pug-948
+run_uuid: 9dfc208a5e4a449d98faeea7d0f32f74
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714496574413
+status: 3
+tags: []
+user_id: codespace

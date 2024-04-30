@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/GemStone-Price-Prediction/mlruns/0/2f9a4879c4de41e9aae83a568b996ed8/artifacts
+end_time: 1714493647790
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2f9a4879c4de41e9aae83a568b996ed8
+run_name: nosy-robin-723
+run_uuid: 2f9a4879c4de41e9aae83a568b996ed8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714493646017
+status: 4
+tags: []
+user_id: codespace
