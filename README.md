@@ -1,4 +1,4 @@
-# End TO End Gemstone Price Prediction
+# End tO End Gemstone Price Prediction
 
 ## Create env
 ```
@@ -20,11 +20,17 @@ pip install -r requirements.txt
 7. Update the main.py
 8. Update the dvc.yaml
 
-## Mldlow Tracking with DagsHub
+## Mlflow Tracking with DagsHub
 
 ### Export in Git Bash
 ```
 export MLFLOW_TRACKING_URI=
 export MLFLOW_TRACKING_USERNAME=
 export MLFLOW_TRACKING_PASSWORD=
+
 ```
+## Run App
+```
+python app.py
+```
+
