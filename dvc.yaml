@@ -10,9 +10,9 @@ stages:
       - artifacts/data_ingestion/raw.csv  
 
   data_transformation:
-    cmd: python src\pipline\data_transformation_pipline.py
+    cmd: python src/pipline/data_transformation_pipline.py
     deps: 
-      - src\pipline\data_transformation_pipline.py
+      - src/pipline/data_transformation_pipline.py
       - config/config.yaml
       - artifacts/data_ingestion/train.csv
       - artifacts/data_ingestion/test.csv
@@ -25,9 +25,9 @@ stages:
     
 
   model_train:
-    cmd: python src\pipline\model_train_pipline.py
+    cmd: python src/pipline/model_train_pipline.py
     deps:
-     - src\pipline\model_train_pipline.py
+     - src/pipline/model_train_pipline.py
      - config/config.yaml
      - artifacts/data_transformation/train_arr.npy
      - artifacts/data_transformation/test_arr.npy
@@ -35,12 +35,12 @@ stages:
      - artifacts/model_trainer/model.pkl  
 
   model_eval:
-    cmd: python src\pipline\model_eval_pipline.py
+    cmd: python src/pipline/model_eval_pipline.py
     deps:
-      - src\pipline\model_eval_pipline.py
+      - src/pipline/model_eval_pipline.py
       - config/config.yaml
       - artifacts/data_transformation/preprocesser.pkl
-      - artifacts/data_ingestion/test.csv
+      - artifacts/data_transformation/test_arr.npy
 
     outs:
-      - artifacts/model_eval/metrics.js
+      - artifacts/model_eval/metrics.json

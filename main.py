@@ -4,6 +4,7 @@ import os,sys
 from src.pipline.data_ingestion_pipline import DataIngestionPipline
 from src.pipline.data_transformation_pipline import DataTransformationPipline
 from src.pipline.model_train_pipline import ModelTrainPipline
+from src.pipline.model_eval_pipline import ModelEvalPipline
 
 
 STAGE_NAME = "Data Ingestion stage"
@@ -38,3 +39,15 @@ if __name__ == '__main__':
     except Exception as e:
         logging.exception(e)
         raise e           
+
+STAGE_NAME = "Model Train stage"
+
+if __name__ == '__main__':
+    try:
+        logging.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+        obj = ModelEvalPipline()
+        obj.pipline()
+        logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+    except Exception as e:
+        logging.exception('error occured',str(e))
+        raise CustomException(sys,e) 

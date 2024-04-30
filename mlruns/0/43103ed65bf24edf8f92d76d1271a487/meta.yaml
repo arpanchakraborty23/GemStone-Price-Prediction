@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/gemstone/mlruns/0/43103ed65bf24edf8f92d76d1271a487/artifacts
+end_time: 1714496413998
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 43103ed65bf24edf8f92d76d1271a487
+run_name: treasured-asp-978
+run_uuid: 43103ed65bf24edf8f92d76d1271a487
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714496406625
+status: 3
+tags: []
+user_id: ac

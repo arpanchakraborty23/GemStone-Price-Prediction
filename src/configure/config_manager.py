@@ -74,7 +74,8 @@ class ConfigManager:
         model_eval_config=ModelEvalConfig(
             dir=config.dir,
             test_arr=config.test_arr,
-            model=config.model
+            model=config.model,
+            metrics=config.metrics
            
         )
         return model_eval_config

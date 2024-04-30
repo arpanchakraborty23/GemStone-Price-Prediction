@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/gemstone/mlruns/0/58a3c5160abf41b0b7a7c1eb5d41df07/artifacts
+end_time: 1714496509312
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 58a3c5160abf41b0b7a7c1eb5d41df07
+run_name: entertaining-rat-804
+run_uuid: 58a3c5160abf41b0b7a7c1eb5d41df07
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714496501775
+status: 3
+tags: []
+user_id: ac

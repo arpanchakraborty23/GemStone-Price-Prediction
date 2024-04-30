@@ -5,8 +5,31 @@
 conda create -p env python==3.9 -y
 conda activate ./env
 ```
-##
-MLFLOW_TRACKING_URI=https://dagshub.com/arpanchakraborty23/GemStone-Price-Prediction.mlflow \
-MLFLOW_TRACKING_USERNAME=arpanchakraborty23 \
-MLFLOW_TRACKING_PASSWORD=c0bea69b1b22e7ab1aa901fe69431974b56f94a6 \
-python script.py
+
+## Workflow
+1. Update config.yaml
+2. Update params.yaml
+3. Update the entity
+4. Update the configmanager in src config
+5. Update the components
+6. Update the pipeline
+7. Update the main.py
+8. Update the dvc.yaml
+
+
+
+## create env variable
+```
+.env
+
+url='mongodb+srv://<username>:<password>@cluster1.kdt4bq1.mongodb.net/'
+db=database_name
+collection=collection_name
+```
+## Export in Git Bash
+```
+export MLFLOW_TRACKING_URI= 
+export MLFLOW_TRACKING_USERNAME=
+export MLFLOW_TRACKING_PASSWORD=
+```
+
