@@ -28,7 +28,7 @@ model_trainer_exp:
   model: artifacts/model_trainer_ex/model_ex.pkl 
 
 model_eval:
-  dir: artfacts/model_eval
+  dir: artifacts/model_eval
   test_arr: artifacts/data_transformation/test_arr.npy
   model: artifacts/model_trainer/model.pkl
   metrics: artifacts/model_eval/metrics.json

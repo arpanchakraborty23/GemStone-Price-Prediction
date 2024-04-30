@@ -49,9 +49,8 @@ class ModelEval:
 
             mlflow_uri=os.getenv('MLFLOW_TRACKING_URI')
 
-            # mlflow.set_registry_uri('https://dagshub.com/arpanchakraborty23/GemStone-Price-Prediction.mlflow')
-            mlflow.set_tracking_uri('MLFLOW_TRACKING_URI=https://dagshub.com/arpanchakraborty23/GemStone-Price-Prediction.mlflow')
-
+            mlflow.set_registry_uri(mlflow_uri)
+            
             track_uri_type_store=urlparse(mlflow.get_tracking_uri()).scheme
 
             print(track_uri_type_store)
@@ -62,7 +61,7 @@ class ModelEval:
 
                 scores={'Rmse':RMSE,'Mse':MSE,'Mae':MAE,'acuracy':acuracy}
 
-             
+                save_json(file_path=self.config.metrics,data=scores)
 
                 mlflow.log_metrics({'Rmse':RMSE,'Mse':MSE,'Mae':MAE,'acuracy':acuracy})
 
