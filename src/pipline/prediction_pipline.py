@@ -12,7 +12,7 @@ class PredictionPipline:
         try:
             preprocesser_obj=load_obj('artifacts\data_transformation\preprocesser.pkl')
             model=load_obj('artifacts\model_trainer\model.pkl')
-
+            logging.info('model loded')
             scale=preprocesser_obj.transform(feature)
             pred=model.predict(scale)
 
